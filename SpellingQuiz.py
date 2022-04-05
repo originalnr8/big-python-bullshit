@@ -1,20 +1,10 @@
+from .getInput import *
 import random
 # Spelling Quiz
 quiz = [
     ["What structure do people occupy? ", "building"], 
     ["What animal makes the noise MOO? ", "cow"]
     ]
-
-def askQuestion_string(question):
-    return str(input(question))
-
-def askQuestion_integer(question):
-    try:
-        answer = int(askQuestion_string(question))
-    except:
-        print("I didn't understand the number you entered.")
-        answer = False
-    return answer
 
 def compareSpelling(attempt, actual):
     listAttempt = list(attempt)
