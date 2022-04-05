@@ -1,6 +1,6 @@
 import os.path
 import os
-
+import json
 from getInput import *
 
 def createFile(filename, text):
@@ -43,4 +43,22 @@ def readArray(filename):
     array = file.split(",")
     return array
 
+def storeJSON(dict, filename):
+    if os.path.exists(filename) == True:
+        # Overwrite
+        result = askQuestion_YorN("Do you wish to overwrite storage file? (Y/N) ")
+        if result == "y":
+            os.remove(filename)
+            text = json.dumps(dict)
+            createFile(filename, text)
+        else:
+            return False
+    else:
+        # Create
+        text = json.dumps(dict)
+        createFile(filename, text)
 
+def readJSON(filename):
+    file = readFile(filename)
+    dict = json.load(file)
+    return dict
