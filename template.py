@@ -13,3 +13,5 @@ if number >0 and number <4:
     print("Fuck yeh")
 else:
     print("Shit no")
+
+    

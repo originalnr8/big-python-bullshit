@@ -43,3 +43,4 @@ def readArray(filename):
     array = file.split(",")
     return array
 
+
